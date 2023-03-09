@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://jx41wj5ko4j5"]
+[gd_scene load_steps=9 format=3 uid="uid://jx41wj5ko4j5"]
 
+[ext_resource type="Script" path="res://scenes/Level.gd" id="1_qohn7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_xuvti"]
 [ext_resource type="Texture2D" uid="uid://dap0p0l02es36" path="res://assets/detective.png" id="2_5x30p"]
+[ext_resource type="Script" path="res://scenes/BulletsHandler.gd" id="4_tc3rx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tu1cy"]
 atlas = ExtResource("2_5x30p")
@@ -29,6 +31,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgkum"]
 
 [node name="GameRoot" type="Node2D"]
+script = ExtResource("1_qohn7")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2(200, 200)
@@ -55,3 +58,4 @@ shape = SubResource("CapsuleShape2D_pgkum")
 [node name="EnemyHandler" type="Node2D" parent="."]
 
 [node name="BulletsHandler" type="Node2D" parent="."]
+script = ExtResource("4_tc3rx")

@@ -5,6 +5,12 @@ extends CharacterBody2D
 const SPEED = 250
 var moveDir
 
+# Relevant nodes
+@onready var BulletsHandler = get_node("/root/BulletsHandler")
+
+# signals https://godotengine.org/qa/59131/how-do-send-a-variable-from-one-script-to-another-via-a-signal
+signal shoot
+
 # Player Motion
 func move_input(delta):
 	moveDir = Vector2.ZERO # Player move vector
@@ -19,9 +25,15 @@ func move_input(delta):
 	
 	return moveDir
 
+# Summon bullets
+func call_bullet(pos, dir):
+	if(Input.is_action_pressed("shoot")):
+		shoot.emit(shoot, pos, dir)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	# connect signal calls
+	BulletsHandler.shoot.connect("create_bullet")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
