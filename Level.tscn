@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://jx41wj5ko4j5"]
+
+[ext_resource type="Texture2D" uid="uid://dap0p0l02es36" path="res://assets/detective.png" id="1_uh6ei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu1cy"]
+atlas = ExtResource("1_uh6ei")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqti2"]
+atlas = ExtResource("1_uh6ei")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nj6pl"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu1cy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqti2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgkum"]
+
+[node name="GameRoot" type="Node2D"]
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+
+[node name="Level" type="TileMap" parent="."]
+format = 2
+
+[node name="CoverHandler" type="Node2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(322, 221)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_nj6pl")
+autoplay = "default"
+frame_progress = 0.793041
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_pgkum")
+
+[node name="EnemyHandler" type="Node2D" parent="."]
+
+[node name="BulletsHandler" type="Node2D" parent="."]
