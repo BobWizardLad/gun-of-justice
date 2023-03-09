@@ -30,6 +30,8 @@ animations = [{
 [node name="GameRoot" type="Node2D"]
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2(200, 200)
+zoom = Vector2(0.75, 0.75)
 
 [node name="Level" type="TileMap" parent="."]
 format = 2

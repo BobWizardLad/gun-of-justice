@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://crhgo3ue0agne"]
+
+[node name="UIRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="MenuButtons"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="MenuButtons"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="MenuButtons"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="MenuButtons"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
