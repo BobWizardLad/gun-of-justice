@@ -28,15 +28,15 @@ func move_input(delta):
 # Summon bullets
 func call_bullet(pos, dir):
 	if(Input.is_action_pressed("shoot")):
-		shoot.emit(shoot, pos, dir)
+		shoot.emit(pos, dir)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# connect signal calls
-	BulletsHandler.shoot.connect("create_bullet")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity = move_input(delta) * SPEED
+	call_bullet(Vector2(2.0, 2.0),Vector2(2.0, 2.0))
 	move_and_slide()
 	
