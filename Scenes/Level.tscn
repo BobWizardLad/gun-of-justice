@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://jx41wj5ko4j5"]
+[gd_scene load_steps=7 format=3 uid="uid://jx41wj5ko4j5"]
 
-[ext_resource type="Texture2D" uid="uid://dap0p0l02es36" path="res://assets/detective.png" id="1_uh6ei"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_xuvti"]
+[ext_resource type="Texture2D" uid="uid://dap0p0l02es36" path="res://assets/detective.png" id="2_5x30p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tu1cy"]
-atlas = ExtResource("1_uh6ei")
+atlas = ExtResource("2_5x30p")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oqti2"]
-atlas = ExtResource("1_uh6ei")
+atlas = ExtResource("2_5x30p")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nj6pl"]
@@ -40,6 +41,7 @@ format = 2
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(322, 221)
+script = ExtResource("1_xuvti")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
