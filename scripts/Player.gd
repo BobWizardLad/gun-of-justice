@@ -25,18 +25,17 @@ func move_input(delta):
 	
 	return moveDir
 
-# Summon bullets
-func call_bullet(pos, dir):
-	if(Input.is_action_pressed("shoot")):
-		shoot.emit(pos, dir)
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# Movement and shooting when possible
+	# -TODO- Conditions to alter player options
 	velocity = move_input(delta) * SPEED
-	call_bullet(Vector2(2.0, 2.0),Vector2(2.0, 2.0))
 	move_and_slide()
+	if(Input.is_action_pressed("shoot")):
+		shoot.emit(Vector2(position.x, position.y), get_viewport().get_mouse_position())
+	
 	

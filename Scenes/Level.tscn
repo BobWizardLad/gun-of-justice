@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://fmhgqxmp0xq0"]
+[gd_scene load_steps=11 format=3 uid="uid://fmhgqxmp0xq0"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_lifyf"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_xuvti"]
 [ext_resource type="Texture2D" uid="uid://dap0p0l02es36" path="res://assets/detective.png" id="2_5x30p"]
+[ext_resource type="Texture2D" uid="uid://ccqcgcix0haxp" path="res://assets/bullet.png" id="2_hf774"]
 [ext_resource type="Script" path="res://scripts/BulletsHandler.gd" id="4_86wxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tu1cy"]
@@ -28,7 +29,13 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgkum"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46gpu"]
+radius = 37.0
+height = 94.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_50f4a"]
+radius = 16.0
+height = 32.0
 
 [node name="GameRoot" type="Node2D"]
 script = ExtResource("1_lifyf")
@@ -40,10 +47,8 @@ zoom = Vector2(0.75, 0.75)
 [node name="Level" type="TileMap" parent="."]
 format = 2
 
-[node name="CoverHandler" type="Node2D" parent="."]
-
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(322, 221)
+position = Vector2(304, 230)
 script = ExtResource("1_xuvti")
 metadata/_edit_group_ = true
 
@@ -53,9 +58,24 @@ autoplay = "default"
 frame_progress = 0.793041
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_pgkum")
+position = Vector2(-2, 7)
+shape = SubResource("CapsuleShape2D_46gpu")
 
 [node name="EnemyHandler" type="Node2D" parent="."]
+
+[node name="CoverHandler" type="Node2D" parent="."]
+
+[node name="Target" type="StaticBody2D" parent="CoverHandler"]
+position = Vector2(2, -2)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoverHandler/Target"]
+position = Vector2(789, 223)
+shape = SubResource("CapsuleShape2D_50f4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="CoverHandler/Target"]
+position = Vector2(790, 220)
+texture = ExtResource("2_hf774")
 
 [node name="BulletsHandler" type="Node2D" parent="."]
 script = ExtResource("4_86wxa")

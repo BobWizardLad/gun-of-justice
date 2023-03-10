@@ -1,7 +1,8 @@
 extends Node2D
 
 func _on_player_shoot(pos, dir):
-	print("bang")
+	print(pos)
+	print(dir)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
