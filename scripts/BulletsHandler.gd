@@ -1,8 +1,13 @@
 extends Node2D
 
+var trailCast = preload("res://bullet_trail.tscn").instantiate()
+
 func _on_player_shoot(pos, dir):
-	print(pos)
-	print(dir)
+	var bulletTrail = trailCast
+	bulletTrail.position = pos
+	bulletTrail.target_position = dir - pos
+	print(bulletTrail.position)
+	print(bulletTrail.target_position)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

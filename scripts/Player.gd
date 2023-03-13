@@ -36,6 +36,6 @@ func _process(delta):
 	velocity = move_input(delta) * SPEED
 	move_and_slide()
 	if(Input.is_action_pressed("shoot")):
-		shoot.emit(Vector2(position.x, position.y), get_viewport().get_mouse_position())
+		shoot.emit(self.global_position, get_global_mouse_position())
 	
 	

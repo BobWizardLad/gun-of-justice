@@ -50,7 +50,6 @@ format = 2
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(304, 230)
 script = ExtResource("1_xuvti")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_nj6pl")
