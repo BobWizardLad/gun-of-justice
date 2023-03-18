@@ -50,6 +50,7 @@ format = 2
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(304, 230)
 script = ExtResource("1_xuvti")
+metadata/pawn = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_nj6pl")
@@ -67,6 +68,7 @@ shape = SubResource("CapsuleShape2D_46gpu")
 [node name="Target" type="StaticBody2D" parent="CoverHandler"]
 position = Vector2(2, -2)
 metadata/_edit_group_ = true
+metadata/pawn = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CoverHandler/Target"]
 position = Vector2(789, 223)
