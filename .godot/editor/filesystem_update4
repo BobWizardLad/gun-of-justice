@@ -1,0 +1,7 @@
+res://default_env.tres
+res://scenes/game_scene.tscn
+res://scenes/player.tscn
+res://scenes/player.gd
+res://scenes/bullet.tscn
+res://scenes/bullet.gd
+res://scenes/trail.gd

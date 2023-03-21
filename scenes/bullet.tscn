@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlx2q54344njm"]
+
+[ext_resource type="Script" path="res://scenes/bullet.gd" id="1_lomwx"]
+[ext_resource type="Texture2D" uid="uid://n3aprmukxeab" path="res://assets/bullet.png" id="2_ddlq2"]
+[ext_resource type="Script" path="res://scenes/trail.gd" id="3_3snfc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b26tu"]
+radius = 2.0
+
+[sub_resource type="Curve" id="Curve_cncrr"]
+_data = [Vector2(0.072165, 0.463636), 0.0, 0.0, 0, 0, Vector2(0.938144, 0.654545), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_lomwx")
+SPEED = 2000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ddlq2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b26tu")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0)
+width = 5.0
+width_curve = SubResource("Curve_cncrr")
+default_color = Color(1, 1, 0.407843, 1)
+script = ExtResource("3_3snfc")
+length = 5

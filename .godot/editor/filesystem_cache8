@@ -1,0 +1,12 @@
+2a60927148abd1d33b818b535e306557
+::res://::1679413940
+default_env.tres::Environment::92264935069457823::1679413883::0::1::::<><>::
+icon.png::CompressedTexture2D::7709582952436443043::1679408880::1679408913::1::::<><>::
+::res://assets/::1679413940
+bullet.png::CompressedTexture2D::970285243674254057::1679413938::1679413940::1::::<><>::
+noir_timer.png::CompressedTexture2D::7138662552925059583::1679412403::1679412404::1::::<><>::
+::res://scenes/::1679413940
+bullet.tscn::PackedScene::7980489572760140266::1679413866::0::1::::<><>::
+game_scene.tscn::PackedScene::4489527254548993781::1679413883::0::1::::<><>::uid://b4xd2ofvc7jj4
+player.gd::GDScript::-1::1679413605::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::4469608948962155763::1679413679::0::1::::<><>::res://scenes/player.gd<>uid://c8yay2bop6qn4
